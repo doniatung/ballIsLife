@@ -11,7 +11,7 @@
      maxSize = 200;
      dx = random(-5,5);
      dy = random(-5,5);
-     c = color(random(256), random(256), random(256));
+     c = color(random(256), random(256), random(256), random(256));
      isAffected = false;
      reachedMaxSize = false;
    }
