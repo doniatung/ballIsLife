@@ -16,11 +16,17 @@
      reachedMaxSize = false;
    }
    
+   /********************************
+   display() - draws ball of random fill color
+   ********************************/
    void display(){
      fill(c);
      ellipse(x,y,rad,rad);
    }
    
+   /********************************
+   move() - bounces ball within the display screen
+   ********************************/
    void move(){
      x += dx;
      y += dy;
@@ -32,11 +38,17 @@
      }
    } // end move
    
+   /********************************
+   endMove() - stops ball
+   ********************************/
    void endMove(){
       dx = 0;
       dy = 0;
    }
    
+   /********************************
+   display(float) - increases size of ball
+   ********************************/
    void grow( float i ){
      if (!reachedMaxSize && rad < maxSize){
         rad = rad + i; 
@@ -46,12 +58,19 @@
      }
    } // end grow
    
+   /********************************
+   shrink(float) - decreases size of ball until it reaches less than 
+   or equal to 0
+   ********************************/
    void shrink(float i){
      if (reachedMaxSize && rad > 0) {
         rad = rad - i; 
      }
    } // end shrink
    
+   /********************************
+   isMouseWithin() - checks if mouse is within the area of the ball
+   ********************************/
    boolean isMouseWithin(){
      if (mouseX>x-rad/2 && mouseX<x+rad/2 &&
          mouseY>y-rad/2 && mouseY<y+rad/2){
@@ -60,6 +79,9 @@
       return false;
    }
    
+   /********************************
+   isOtherBallTouching(Ball) - checks if another ball is touching this ball
+   ********************************/
    boolean isOtherBallTouching(Ball b){
      if (dist(b.x,b.y,x,y) <= b.rad/2 + rad/2){
        return true;

@@ -2,6 +2,9 @@ Ball[] balls = new Ball[50];
 boolean reactionStarted;
 float sizeCtr;
 
+/********************************
+setup() - sets up display environment, initializes balls array and state variables
+********************************/
 void setup(){
   size(600,600);
   for (int i = 0; i < balls.length; i++){
@@ -12,6 +15,11 @@ void setup(){
 
 }
 
+/********************************
+draw() - bounces balls within display region, keeping it within the boundaries
+         of the display. If a ball is clicked, a chain reaction is started.
+         Run to see chain reaction.
+********************************/
 void draw(){
   sizeCtr = .5;
   background(0);
@@ -42,4 +50,3 @@ void draw(){
   }
 
 }
-
